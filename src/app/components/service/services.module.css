@@ -1,0 +1,105 @@
+.servicesWrapper {
+  background: #EDECF7; /* Light background matching partner ecosystem */
+  padding: 50px 80px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #0b1629;
+}
+
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swiper {
+  flex: 1;
+}
+
+.slide {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.serviceImage {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.textWrapper {
+  flex: 1;
+}
+
+.textWrapper h3 {
+  font-size: 28px;
+  color: #0b1629;
+}
+
+.shortDesc {
+  font-weight: 500;
+  color: #1f2d3d;
+  margin-top: 10px;
+}
+
+.longDesc {
+  margin-top: 15px;
+  color: #4a5568;
+}
+
+.readMoreBtn {
+  margin-top: 20px;
+  display: inline-block;
+  background: #0b1629;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.readMoreBtn:hover {
+  background: #102040;
+}
+
+.navWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+  gap: 15px;
+}
+
+.navButton {
+  background: #0b1629;
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.navButton:hover {
+  transform: scale(1.1);
+  background: #102040;
+}
+
+.pagination {
+  color: #0b1629;
+  font-weight: 600;
+}
