@@ -33,7 +33,12 @@ export default function IndustryVerticals() {
   }, [selected]);
 
   return (
-    <div className="flex justify-center py-20 bg-gradient-to-br from-gray-100 to-blue-100">
+  <div className="bg-gradient-to-br from-gray-100 to-blue-100 px-4 py-12">
+    {/* Page Heading at top center */}
+    <h1 className="text-4xl md:text-5xl font-bold text-blue-800 text-center mb-12">
+      Industry Verticals
+    </h1>
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
