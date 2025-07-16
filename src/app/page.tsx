@@ -8,13 +8,15 @@ import Whypaves from './components/whypaves/whypaves';
 export default function Home() {
   return (
     <main>
+      <Whypaves></Whypaves>
       <Services />
+      <IndustryVerticals/>
       <PartnerEcosystem />
       <JoinUs/>
-      <IndustryVerticals/>
       <Footer></Footer>
-      <Whypaves></Whypaves>
+      
  
     </main>
+
   );
 }
