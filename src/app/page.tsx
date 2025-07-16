@@ -2,7 +2,8 @@ import Services from "@/app/components/service/Services";
 import PartnerEcosystem from "@/app/components/partner-ecosystem/PartnerEcosystem";
 import JoinUs from '@/app/components/join_us/joinUs';
 import IndustryVerticals from '@/app/components/Industry Verticals/IndustryVerticals'
-
+import  Footer from './components/footer/footer';
+import Whypaves from './components/whypaves/whypaves';
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
       <PartnerEcosystem />
       <JoinUs/>
       <IndustryVerticals/>
+      <Footer></Footer>
+      <Whypaves></Whypaves>
+ 
     </main>
   );
 }
