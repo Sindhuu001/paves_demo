@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import styles from "./services.module.css";
 
 const services = [
   {
@@ -61,9 +62,9 @@ const Services = () => {
   const swiperRef = useRef(null);
 
   return (
-    <div className="relative w-full bg-[#f4f8fb] py-16 px-8">
+    <div className={styles.servicesWrapper}>
       <motion.h2
-        className="text-2xl md:text-3xl font-extrabold text-[#0c3c60] mb-6 md:mb-8 text-center tracking-tight"
+        className={styles.heading}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -71,78 +72,70 @@ const Services = () => {
         Our Services
       </motion.h2>
 
-      <Swiper
-        modules={[Autoplay, Navigation]}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        autoplay={{ delay: 100 }}
-        speed = {3000}
-        loop={true}
-        navigation={false}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % services.length)}
-        className="w-full max-w-6xl mx-auto"
-      >
-        {services.map((service, index) => (
-          <SwiperSlide key={index}>
-            <motion.div
-              className="flex flex-col md:flex-row items-center bg-white shadow-xl rounded-2xl p-6 md:p-12 transition-all duration-500 hover:scale-[1.01]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <motion.div
-                className="w-full md:w-1/2"
-                initial={{ x: -40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={600}
-                  height={400}
-                  className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
-                />
-              </motion.div>
-
-              <motion.div
-                className="w-full md:w-1/2 mt-6 md:mt-0 md:ml-12"
-                initial={{ x: 40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                <h3 className="text-2xl md:text-3xl font-bold text-[#0c3c60] mb-4">{service.title}</h3>
-                <p className="text-lg text-gray-700 mb-3">{service.shortDescription}</p>
-                <p className="text-base text-gray-600 mb-5">{service.longDescription}</p>
-
-                <Link
-                  href={service.link}
-                  className="inline-block bg-[#ff5e9c] text-white px-6 py-2 rounded-full hover:bg-[#e94b8d] transition-colors duration-300"
-                >
-                  Read More
-                </Link>
-              </motion.div>
-            </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* Navigation + Pagination on Right Side */}
-      <div className="absolute top-1/2 right-8 transform -translate-y-1/2 flex flex-col items-center space-y-4">
-        <button
-          onClick={() => swiperRef.current?.slidePrev()}
-          className="bg-[#0c3c60] text-white p-3 rounded-full shadow-md hover:bg-[#145b92] transition-all"
+      <div className={styles.sliderContainer}>
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          autoplay={{ delay: 100 }}
+          speed={3000}
+          loop={true}
+          navigation={false}
+          onSlideChange={(swiper) =>
+            setActiveIndex(swiper.realIndex % services.length)
+          }
+          className={styles.swiper}
         >
-          <ArrowLeft size={20} />
-        </button>
+          {services.map((service, index) => (
+            <SwiperSlide key={index}>
+              <motion.div
+                className={styles.slide}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={600}
+                    height={400}
+                    className={styles.serviceImage}
+                  />
+                </div>
 
-        <span className="text-[#0c3c60] font-semibold">{activeIndex + 1} / {services.length}</span>
+                <div className={styles.textWrapper}>
+                  <h3 className={styles.title}>{service.title}</h3>
+                  <p className={styles.shortDesc}>{service.shortDescription}</p>
+                  <p className={styles.longDesc}>{service.longDescription}</p>
 
-        <button
-          onClick={() => swiperRef.current?.slideNext()}
-          className="bg-[#0c3c60] text-white p-3 rounded-full shadow-md hover:bg-[#145b92] transition-all"
-        >
-          <ArrowRight size={20} />
-        </button>
+                  <Link href={service.link} className={styles.readMoreBtn}>
+                    Read More
+                  </Link>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className={styles.navWrapper}>
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className={styles.navButton}
+          >
+            <ArrowLeft size={20} />
+          </button>
+
+          <span className={styles.pagination}>
+            {activeIndex + 1} / {services.length}
+          </span>
+
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className={styles.navButton}
+          >
+            <ArrowRight size={20} />
+          </button>
+        </div>
       </div>
     </div>
   );
