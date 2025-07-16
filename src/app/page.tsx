@@ -1,17 +1,22 @@
-
+import Services from "@/app/components/service/Services";
+import PartnerEcosystem from "@/app/components/partner-ecosystem/PartnerEcosystem";
+import JoinUs from '@/app/components/join_us/joinUs';
+import IndustryVerticals from '@/app/components/Industry Verticals/IndustryVerticals'
 import  Footer from './components/footer/footer';
 import Whypaves from './components/whypaves/whypaves';
-import PartnerEcosystem from './components/partner-ecosystem/PartnerEcosystem';
-import Services from './components/service/Services';
+
 export default function Home() {
   return (
-    
-    <>
-    <Whypaves></Whypaves>
-    <Services></Services>
-    <PartnerEcosystem></PartnerEcosystem>
-    <Footer></Footer>
-    </>
+    <main>
+      <Whypaves></Whypaves>
+      <Services />
+      <IndustryVerticals/>
+      <PartnerEcosystem />
+      <JoinUs/>
+      <Footer></Footer>
+      
+ 
+    </main>
 
   );
 }
