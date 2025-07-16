@@ -1,4 +1,5 @@
 // app/components/Hero.tsx (or directly in your page file)
+"use client";
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-white px-6 lg:px-20">
