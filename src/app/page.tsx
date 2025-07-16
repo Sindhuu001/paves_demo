@@ -1,16 +1,19 @@
 
 import  Footer from './components/footer/footer';
 import Whypaves from './components/whypaves/whypaves';
-import PratnerEcosystem from './components/partner-ecosystem/PartnerEcosystem';
+import PartnerEcosystem from './components/partner-ecosystem/PartnerEcosystem';
 import Services from './components/service/Services';
+import Hero from './components/hero/hero';
 export default function Home() {
   return (
     
     <>
+    <Hero></Hero>
     <Whypaves></Whypaves>
     <Services></Services>
-    <PratnerEcosystem></PratnerEcosystem>
+    <PartnerEcosystem></PartnerEcosystem>
     <Footer></Footer>
+
     </>
 
   );
