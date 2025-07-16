@@ -4,10 +4,14 @@ import JoinUs from '@/app/components/join_us/joinUs';
 import IndustryVerticals from '@/app/components/Industry Verticals/IndustryVerticals'
 import  Footer from './components/footer/footer';
 import Whypaves from './components/whypaves/whypaves';
+import Navbar from './components/Navbar/Navbar'
+import Hero from './components/hero/hero'
 
 export default function Home() {
   return (
     <main>
+      <Navbar></Navbar>
+      <Hero></Hero>
       <Whypaves></Whypaves>
       <Services />
       <IndustryVerticals/>
