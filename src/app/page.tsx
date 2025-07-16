@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar/Navbar";
 import Services from "./components/service/Services";
 import PartnerEcosystem from "./components/partner-ecosystem/PartnerEcosystem";
 import JoinUs from "./components/join_us/joinUs";
@@ -9,7 +8,6 @@ import Whypaves from "./components/whypaves/whypaves";
 export default function Home() {
   return (
     <>
-      <Navbar></Navbar>
       <Whypaves></Whypaves>
       <Services></Services>
       <IndustryVerticals></IndustryVerticals>
