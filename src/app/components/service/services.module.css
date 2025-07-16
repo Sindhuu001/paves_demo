@@ -1,5 +1,5 @@
 .servicesWrapper {
-  background: #EDECF7; /* Light background matching partner ecosystem */
+  background: #EDECF7;
   padding: 50px 80px;
 }
 
@@ -40,11 +40,15 @@
   transition: transform 0.4s ease;
 }
 
+.serviceImage:hover {
+  transform: scale(1.05);
+}
+
 .textWrapper {
   flex: 1;
 }
 
-.textWrapper h3 {
+.title {
   font-size: 28px;
   color: #0b1629;
 }
