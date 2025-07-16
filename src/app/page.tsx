@@ -1,13 +1,17 @@
-import Services from "@/app/components/service/Services";
-import PartnerEcosystem from "@/app/components/partner-ecosystem/PartnerEcosystem";
 
-
-
+import  Footer from './components/footer/footer';
+import Whypaves from './components/whypaves/whypaves';
+import PratnerEcosystem from './components/partner-ecosystem/PartnerEcosystem';
+import Services from './components/service/Services';
 export default function Home() {
   return (
-    <main>
-      <Services />
-      <PartnerEcosystem />
-    </main>
+    
+    <>
+    <Whypaves></Whypaves>
+    <Services></Services>
+    <PratnerEcosystem></PratnerEcosystem>
+    <Footer></Footer>
+    </>
+
   );
 }
