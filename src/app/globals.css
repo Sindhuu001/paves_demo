@@ -1,8 +1,22 @@
 
-@import 'tailwindcss';
+@import "tailwindcss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+.bg-dotted {
+  background-image: radial-gradient(#d6d6d6 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes slowspin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-
-@import 'tailwindcss';
+.animate-slowspin {
+  animation: slowspin 18s linear infinite;
+}
 
 /* Default Light Theme */
 :root {
@@ -29,3 +43,4 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans);
 }
+
