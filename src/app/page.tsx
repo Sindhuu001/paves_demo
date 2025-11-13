@@ -8,6 +8,8 @@ import Whypaves from "./components/whypaves/whypaves";
 export default function Home() {
   return (
     <>
+      <Navbar></Navbar>
+      <Hero></Hero>
       <Whypaves></Whypaves>
       <Services></Services>
       <IndustryVerticals></IndustryVerticals>
